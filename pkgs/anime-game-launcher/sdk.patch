@@ -1,0 +1,39 @@
+diff '--color=auto' -Naur a/Cargo.lock b/Cargo.lock
+--- a/Cargo.lock	2024-06-30 14:59:13.396167419 +0200
++++ b/Cargo.lock	2024-06-30 15:04:06.794918638 +0200
+@@ -57,8 +57,8 @@
+ 
+ [[package]]
+ name = "anime-game-core"
+-version = "1.19.0"
+-source = "git+https://github.com/an-anime-team/anime-game-core?tag=1.19.0#2bec59f6bc6a1bb3ce8f0162ca8e3bd4d349cc34"
++version = "1.20.1"
++source = "git+https://github.com/an-anime-team/anime-game-core?tag=1.20.1#1f1bddbea690842e9a62aee20f1e64cb0d69a22e"
+ dependencies = [
+  "anyhow",
+  "bzip2",
+@@ -107,8 +107,8 @@
+ 
+ [[package]]
+ name = "anime-launcher-sdk"
+-version = "1.14.0"
+-source = "git+https://github.com/an-anime-team/anime-launcher-sdk?tag=1.14.0#1e94edd76e114ddf72347f049071e10af522827b"
++version = "1.15.3"
++source = "git+https://github.com/zakuciael/anime-launcher-sdk?branch=main#362f1a72abb274f0e431c41475fd388d07c880ae"
+ dependencies = [
+  "anime-game-core",
+  "anyhow",
+diff '--color=auto' -Naur a/Cargo.toml b/Cargo.toml
+--- a/Cargo.toml	2024-06-30 14:58:57.136672624 +0200
++++ b/Cargo.toml	2024-06-30 15:00:54.341011527 +0200
+@@ -18,8 +18,8 @@
+ glib-build-tools = "0.19"
+ 
+ [dependencies.anime-launcher-sdk]
+-git = "https://github.com/an-anime-team/anime-launcher-sdk"
+-tag = "1.14.0"
++git = "https://github.com/zakuciael/anime-launcher-sdk"
++branch = "main"
+ features = ["all", "genshin"]
+ 
+ # path = "../anime-launcher-sdk" # ! for dev purposes only
