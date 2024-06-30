@@ -29,6 +29,8 @@ with lib;
       fetchSubmodules = true;
     };
 
+    patches = [./sdk.patch];
+
     prePatch = optionalString (customIcon != null) ''
       rm assets/images/icon.png
       cp ${customIcon} assets/images/icon.png
@@ -37,8 +39,8 @@ with lib;
     cargoLock = {
       lockFile = ./Cargo.lock;
       outputHashes = {
-        "anime-game-core-1.20.2" = "sha256-Jccbmihl4NeOOEn3vMetCaS5cKfi/BTwG9u8XxcQuOg=";
-        "anime-launcher-sdk-1.15.4" = "sha256-QYPgug7hh0DcekyxDj5NeRIFo1jSqUYziivxafPp0r8=";
+        "anime-game-core-1.20.1" = "sha256-RjR/fznshGMJeNTyjhRo0h5tOe7qapTThY+cQv8jVa8=";
+        "anime-launcher-sdk-1.15.3" = "sha256-kyYUTD/mcWqY9qomozGDDYsMX7VRew3THt7hmceiLSw=";
       };
     };
 
