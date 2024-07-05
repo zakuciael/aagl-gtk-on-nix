@@ -19,7 +19,7 @@
 with lib;
   rustPlatform.buildRustPackage rec {
     pname = "honkers-railway-launcher";
-    version = "1.6.1+vazDByO7d3";
+    version = "1.6.1+kZHxzaOtLp";
 
     src = fetchFromGitHub {
       owner = "an-anime-team";

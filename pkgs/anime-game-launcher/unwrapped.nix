@@ -19,7 +19,7 @@
 with lib;
   rustPlatform.buildRustPackage rec {
     pname = "anime-game-launcher";
-    version = "3.10.1+kAMouRaAZn";
+    version = "3.10.1+9rqrGeAJ5H";
 
     src = fetchFromGitHub {
       owner = "an-anime-team";

@@ -19,7 +19,7 @@
 with lib;
   rustPlatform.buildRustPackage rec {
     pname = "sleepy-launcher";
-    version = "1.0.0+VqYYgYcpdV";
+    version = "1.0.0+M0okHWHnzO";
 
     src = fetchFromGitHub {
       owner = "an-anime-team";

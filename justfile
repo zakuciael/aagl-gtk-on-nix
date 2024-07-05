@@ -232,6 +232,11 @@ create_patch package nix_file cargo_lock:
 
     echo "Patching dependencies.."
     cp "${ORG_FILES_PATH}/${FILES[1]}" "${MODIFIED_FILES_PATH}/${FILES[1]}"
+    FEATURES=$(dasel \
+      -f "${MODIFIED_FILES_PATH}/${FILES[1]}" \
+      -w json \
+      --pretty=false \
+      '.dependencies.anime-launcher-sdk.features')
     dasel put \
         -f "${MODIFIED_FILES_PATH}/${FILES[1]}" \
         -t json \
@@ -240,7 +245,7 @@ create_patch package nix_file cargo_lock:
     dasel put \
         -f "${MODIFIED_FILES_PATH}/${FILES[1]}" \
         -t json \
-        -v "{ \"git\": \"https://github.com/zakuciael/${CARGO_DEPS[0]}\", \"rev\": \"${SDK_REV}\" }" \
+        -v "{ \"git\": \"https://github.com/zakuciael/${CARGO_DEPS[0]}\", \"rev\": \"${SDK_REV}\", \"features\": ${FEATURES} }" \
         ".dependencies.anime-launcher-sdk"
 
     echo "Generating Cargo.lock file.."
@@ -262,7 +267,7 @@ create_patch package nix_file cargo_lock:
     just update_nix_pkg "{{nix_file}}" "{{cargo_lock}}" "${NIX_PKG_VERSION}" "${NEW_PKG_VERSION}"
 
     echo "Cleaning up temp directory.."
-    rm -rf "${TMP_FOLDER}"
+    # rm -rf "${TMP_FOLDER}"
 
     echo "Update complete!"
 

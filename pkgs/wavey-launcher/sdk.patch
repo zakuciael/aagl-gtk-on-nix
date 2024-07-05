@@ -1,29 +1,7 @@
-diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-patcher-CjWr7qxrdi/modified/Cargo.lock
---- /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock	2024-07-06 00:09:34.913926279 +0200
-+++ /tmp/aagl-nix-patcher-CjWr7qxrdi/modified/Cargo.lock	2024-07-06 00:09:48.109463601 +0200
-@@ -50,21 +50,6 @@
- ]
- 
- [[package]]
--name = "alloc-no-stdlib"
--version = "2.0.4"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "cc7bb162ec39d46ab1ca8c77bf72e890535becd1751bb45f64c597edb4c8c6b3"
--
--[[package]]
--name = "alloc-stdlib"
--version = "0.2.2"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "94fb8275041c72129eb51b7d0322c29b8387a0386127718b096429201a5d6ece"
--dependencies = [
-- "alloc-no-stdlib",
--]
--
--[[package]]
- name = "allocator-api2"
- version = "0.2.18"
- source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -72,13 +57,12 @@
+diff -Naur /tmp/aagl-nix-patcher-QQviHVvabB/org_files/Cargo.lock /tmp/aagl-nix-patcher-QQviHVvabB/modified/Cargo.lock
+--- /tmp/aagl-nix-patcher-QQviHVvabB/org_files/Cargo.lock	2024-07-06 01:20:28.922672321 +0200
++++ /tmp/aagl-nix-patcher-QQviHVvabB/modified/Cargo.lock	2024-07-06 01:20:35.602447523 +0200
+@@ -72,13 +72,13 @@
  
  [[package]]
  name = "anime-game-core"
@@ -33,14 +11,14 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
 +source = "git+https://github.com/an-anime-team/anime-game-core?tag=1.21.1#4d8f47721a03b95ef680171b18428f098f8f0ede"
  dependencies = [
   "anyhow",
-- "brotli-decompressor",
+  "brotli-decompressor",
   "bzip2",
 - "cached",
 + "cached 0.52.0",
   "dns-lookup",
   "flate2",
   "fs_extra",
-@@ -92,19 +76,18 @@
+@@ -92,19 +92,18 @@
   "tar",
   "thiserror",
   "tracing",
@@ -63,24 +41,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
   "discord-rich-presence",
   "enum-ordinalize",
   "lazy_static",
-@@ -430,16 +413,6 @@
- ]
- 
- [[package]]
--name = "brotli-decompressor"
--version = "4.0.1"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "9a45bd2e4095a8b518033b128020dd4a55aab1c0a381ba4404a472630f4bc362"
--dependencies = [
-- "alloc-no-stdlib",
-- "alloc-stdlib",
--]
--
--[[package]]
- name = "bstr"
- version = "1.9.1"
- source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -495,7 +468,22 @@
+@@ -495,7 +494,22 @@
  checksum = "0feb64151eed3da6107fddd2d717a6ca4b9dbd74e43784c55c841d1abfe5a295"
  dependencies = [
   "ahash",
@@ -104,7 +65,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
   "cached_proc_macro_types",
   "hashbrown",
   "instant",
-@@ -516,6 +504,18 @@
+@@ -516,6 +530,18 @@
  ]
  
  [[package]]
@@ -123,7 +84,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  name = "cached_proc_macro_types"
  version = "0.1.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -547,9 +547,9 @@
+@@ -547,9 +573,9 @@
  
  [[package]]
  name = "cc"
@@ -135,7 +96,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "jobserver",
   "libc",
-@@ -574,9 +574,9 @@
+@@ -574,9 +600,9 @@
  
  [[package]]
  name = "cfg_aliases"
@@ -147,7 +108,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "cipher"
-@@ -1836,9 +1836,9 @@
+@@ -1836,9 +1862,9 @@
  
  [[package]]
  name = "nix"
@@ -159,7 +120,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "bitflags 2.6.0",
   "cfg-if",
-@@ -1913,9 +1913,9 @@
+@@ -1913,9 +1939,9 @@
  
  [[package]]
  name = "object"
@@ -171,7 +132,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "memchr",
  ]
-@@ -1928,9 +1928,9 @@
+@@ -1928,9 +1954,9 @@
  
  [[package]]
  name = "open"
@@ -183,7 +144,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "is-wsl",
   "libc",
-@@ -2448,9 +2448,9 @@
+@@ -2448,9 +2474,9 @@
  
  [[package]]
  name = "serde_json"
@@ -195,7 +156,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "itoa",
   "ryu",
-@@ -2692,9 +2692,9 @@
+@@ -2692,9 +2718,9 @@
  
  [[package]]
  name = "tinyvec"
@@ -207,7 +168,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "tinyvec_macros",
  ]
-@@ -3069,7 +3069,7 @@
+@@ -3069,7 +3095,7 @@
  dependencies = [
   "anime-launcher-sdk",
   "anyhow",
@@ -216,7 +177,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
   "enum-ordinalize",
   "fluent-templates",
   "glib-build-tools",
-@@ -3159,7 +3159,7 @@
+@@ -3159,7 +3185,7 @@
  checksum = "e48a53791691ab099e5e2ad123536d0fff50652600abaf43bbf952894110d0be"
  dependencies = [
   "windows-core",
@@ -225,7 +186,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  ]
  
  [[package]]
-@@ -3168,7 +3168,7 @@
+@@ -3168,7 +3194,7 @@
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "33ab640c8d7e35bf8ba19b884ba838ceb4fba93a4e8c65a9059d08afcfc683d9"
  dependencies = [
@@ -234,7 +195,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  ]
  
  [[package]]
-@@ -3186,7 +3186,7 @@
+@@ -3186,7 +3212,7 @@
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "282be5f36a8ce781fad8c8ae18fa3f9beff57ec1b52cb3de0789201425d9a33d"
  dependencies = [
@@ -243,7 +204,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  ]
  
  [[package]]
-@@ -3206,18 +3206,18 @@
+@@ -3206,18 +3232,18 @@
  
  [[package]]
  name = "windows-targets"
@@ -271,7 +232,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  ]
  
  [[package]]
-@@ -3228,9 +3228,9 @@
+@@ -3228,9 +3254,9 @@
  
  [[package]]
  name = "windows_aarch64_gnullvm"
@@ -283,7 +244,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_aarch64_msvc"
-@@ -3240,9 +3240,9 @@
+@@ -3240,9 +3266,9 @@
  
  [[package]]
  name = "windows_aarch64_msvc"
@@ -295,7 +256,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_i686_gnu"
-@@ -3252,15 +3252,15 @@
+@@ -3252,15 +3278,15 @@
  
  [[package]]
  name = "windows_i686_gnu"
@@ -315,7 +276,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_i686_msvc"
-@@ -3270,9 +3270,9 @@
+@@ -3270,9 +3296,9 @@
  
  [[package]]
  name = "windows_i686_msvc"
@@ -327,7 +288,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_x86_64_gnu"
-@@ -3282,9 +3282,9 @@
+@@ -3282,9 +3308,9 @@
  
  [[package]]
  name = "windows_x86_64_gnu"
@@ -339,7 +300,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_x86_64_gnullvm"
-@@ -3294,9 +3294,9 @@
+@@ -3294,9 +3320,9 @@
  
  [[package]]
  name = "windows_x86_64_gnullvm"
@@ -351,7 +312,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_x86_64_msvc"
-@@ -3306,9 +3306,9 @@
+@@ -3306,9 +3332,9 @@
  
  [[package]]
  name = "windows_x86_64_msvc"
@@ -363,7 +324,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "winnow"
-@@ -3369,9 +3369,9 @@
+@@ -3369,9 +3395,9 @@
  
  [[package]]
  name = "zbus"
@@ -375,7 +336,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "async-broadcast",
   "async-process",
-@@ -3402,9 +3402,9 @@
+@@ -3402,9 +3428,9 @@
  
  [[package]]
  name = "zbus_macros"
@@ -387,7 +348,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "proc-macro-crate",
   "proc-macro2",
-@@ -3426,18 +3426,18 @@
+@@ -3426,18 +3452,18 @@
  
  [[package]]
  name = "zerocopy"
@@ -410,7 +371,41 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "proc-macro2",
   "quote",
-@@ -3537,9 +3537,9 @@
+@@ -3509,27 +3535,27 @@
+ 
+ [[package]]
+ name = "zstd"
+-version = "0.13.1"
++version = "0.13.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "2d789b1514203a1120ad2429eae43a7bd32b90976a7bb8a05f7ec02fa88cc23a"
++checksum = "fcf2b778a664581e31e389454a7072dab1647606d44f7feea22cd5abb9c9f3f9"
+ dependencies = [
+  "zstd-safe",
+ ]
+ 
+ [[package]]
+ name = "zstd-safe"
+-version = "7.1.0"
++version = "7.2.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "1cd99b45c6bc03a018c8b8a86025678c87e55526064e38f9df301989dce7ec0a"
++checksum = "fa556e971e7b568dc775c136fc9de8c779b1c2fc3a63defaafadffdbd3181afa"
+ dependencies = [
+  "zstd-sys",
+ ]
+ 
+ [[package]]
+ name = "zstd-sys"
+-version = "2.0.11+zstd.1.5.6"
++version = "2.0.12+zstd.1.5.6"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "75652c55c0b6f3e6f12eb786fe1bc960396bf05a1eb3bf1f3691c3610ac2e6d4"
++checksum = "0a4e40c320c3cb459d9a9ff6de98cff88f4751ee9275d140e2be94a2b74e4c13"
+ dependencies = [
+  "cc",
+  "pkg-config",
+@@ -3537,9 +3563,9 @@
  
  [[package]]
  name = "zvariant"
@@ -422,7 +417,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "endi",
   "enumflags2",
-@@ -3551,9 +3551,9 @@
+@@ -3551,9 +3577,9 @@
  
  [[package]]
  name = "zvariant_derive"
@@ -434,10 +429,10 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "proc-macro-crate",
   "proc-macro2",
-diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.toml /tmp/aagl-nix-patcher-CjWr7qxrdi/modified/Cargo.toml
---- /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.toml	2024-07-06 00:09:35.241914779 +0200
-+++ /tmp/aagl-nix-patcher-CjWr7qxrdi/modified/Cargo.toml	2024-07-06 00:09:48.145462339 +0200
-@@ -1,49 +1,63 @@
+diff -Naur /tmp/aagl-nix-patcher-QQviHVvabB/org_files/Cargo.toml /tmp/aagl-nix-patcher-QQviHVvabB/modified/Cargo.toml
+--- /tmp/aagl-nix-patcher-QQviHVvabB/org_files/Cargo.toml	2024-07-06 01:20:29.242661551 +0200
++++ /tmp/aagl-nix-patcher-QQviHVvabB/modified/Cargo.toml	2024-07-06 01:20:35.638446312 +0200
+@@ -1,49 +1,64 @@
 -[package]
 -name = "wavey-launcher"
 -version = "1.0.1"
@@ -498,6 +493,7 @@ diff -Naur /tmp/aagl-nix-patcher-CjWr7qxrdi/org_files/Cargo.toml /tmp/aagl-nix-p
 +    version = '0.6.0'
 +
 +  [dependencies.anime-launcher-sdk]
++    features = ['all', 'wuwa', 'wuwa-patch']
 +    git = 'https://github.com/zakuciael/anime-launcher-sdk'
 +    rev = '133d6b7ffd005a8f63950626bb01ba77bf8270df'
 +

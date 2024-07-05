@@ -19,7 +19,7 @@
 with lib;
   rustPlatform.buildRustPackage rec {
     pname = "wavey-launcher";
-    version = "1.0.1+CjWr7qxrdi";
+    version = "1.0.1+QQviHVvabB";
 
     src = fetchFromGitHub {
       owner = "an-anime-team";
