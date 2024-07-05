@@ -19,7 +19,7 @@
 with lib;
   rustPlatform.buildRustPackage rec {
     pname = "honkers-launcher";
-    version = "1.6.3";
+    version = "1.6.3+HtY84w9bR7";
 
     src = fetchFromGitHub {
       owner = "an-anime-team";
@@ -29,6 +29,9 @@ with lib;
       fetchSubmodules = true;
     };
 
+    patches = [./sdk.patch];
+    patchFlags = ["-p4"];
+
     prePatch = optionalString (customIcon != null) ''
       rm assets/images/icon.png
       cp ${customIcon} assets/images/icon.png
@@ -37,8 +40,8 @@ with lib;
     cargoLock = {
       lockFile = ./Cargo.lock;
       outputHashes = {
-        "anime-game-core-1.17.8" = "sha256-a6SEnBgSaw2aa9BbZ1EfcA4milbXHhFvKaMFEuLI598=";
-        "anime-launcher-sdk-1.12.10" = "sha256-lbQEiMUWShY8bbxcPkxqmHAOMJ+X9lckd2REUNaWwBM=";
+        "anime-game-core-1.21.1" = "sha256-8s9c7DkNObOPyyCrezBz6HORzjWasmSI8/KJ2QYhCLk=";
+        "anime-launcher-sdk-1.16.2" = "sha256-4pQ5PRQbSBCTktnw1/l5zvgUJoamjmRh/xsgk96hfmw=";
       };
     };
 

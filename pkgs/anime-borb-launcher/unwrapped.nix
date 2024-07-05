@@ -18,7 +18,7 @@
 with lib;
   rustPlatform.buildRustPackage rec {
     pname = "anime-borb-launcher";
-    version = "1.0.1";
+    version = "1.0.1+gyiBmJ6VYF";
 
     src = fetchFromGitHub {
       owner = "an-anime-team";
@@ -28,6 +28,9 @@ with lib;
       fetchSubmodules = true;
     };
 
+    patches = [./sdk.patch];
+    patchFlags = ["-p4"];
+
     prePatch = optionalString (customIcon != null) ''
       rm assets/images/icon.png
       cp ${customIcon} assets/images/icon.png
@@ -36,8 +39,8 @@ with lib;
     cargoLock = {
       lockFile = ./Cargo.lock;
       outputHashes = {
-        "anime-game-core-1.12.5" = "sha256-1JHPGMkzaVOIfXjt/LgFHc0Q+95/SpRI7kbxhT1DO/U=";
-        "anime-launcher-sdk-1.7.6" = "sha256-dVxms1nq8ZgsGCBwskpsQQqMzO9HNiWi4ozJebvD+To=";
+        "anime-game-core-1.21.1" = "sha256-8s9c7DkNObOPyyCrezBz6HORzjWasmSI8/KJ2QYhCLk=";
+        "anime-launcher-sdk-1.16.2" = "sha256-4pQ5PRQbSBCTktnw1/l5zvgUJoamjmRh/xsgk96hfmw=";
       };
     };
 

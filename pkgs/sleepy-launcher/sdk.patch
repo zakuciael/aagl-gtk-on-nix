@@ -1,103 +1,27 @@
-diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-patcher-kAMouRaAZn/modified/Cargo.lock
---- /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock	2024-07-06 00:09:34.673934694 +0200
-+++ /tmp/aagl-nix-patcher-kAMouRaAZn/modified/Cargo.lock	2024-07-06 00:09:39.317771864 +0200
-@@ -57,12 +57,12 @@
+diff -Naur /tmp/aagl-nix-patcher-VqYYgYcpdV/org_files/Cargo.lock /tmp/aagl-nix-patcher-VqYYgYcpdV/modified/Cargo.lock
+--- /tmp/aagl-nix-patcher-VqYYgYcpdV/org_files/Cargo.lock	2024-07-06 00:09:34.709933432 +0200
++++ /tmp/aagl-nix-patcher-VqYYgYcpdV/modified/Cargo.lock	2024-07-06 00:09:41.977678599 +0200
+@@ -57,8 +57,8 @@
  
  [[package]]
  name = "anime-game-core"
--version = "1.20.2"
--source = "git+https://github.com/an-anime-team/anime-game-core?tag=1.20.2#3f013bffed78ca9c22db1d8bb10d4ae8ef527c5c"
+-version = "1.21.0"
+-source = "git+https://github.com/an-anime-team/anime-game-core?tag=1.21.1#f141176fe5d940c89eee376354a07408c18fbcab"
 +version = "1.21.1"
 +source = "git+https://github.com/an-anime-team/anime-game-core?tag=1.21.1#4d8f47721a03b95ef680171b18428f098f8f0ede"
  dependencies = [
   "anyhow",
   "bzip2",
-- "cached",
-+ "cached 0.52.0",
-  "dns-lookup",
-  "flate2",
-  "fs_extra",
-@@ -86,7 +86,7 @@
- dependencies = [
-  "anime-launcher-sdk",
-  "anyhow",
-- "cached",
-+ "cached 0.51.4",
-  "enum-ordinalize",
-  "fluent-templates",
-  "glib-build-tools",
-@@ -107,12 +107,12 @@
- 
+@@ -83,7 +83,7 @@
  [[package]]
  name = "anime-launcher-sdk"
--version = "1.15.4"
--source = "git+https://github.com/an-anime-team/anime-launcher-sdk?tag=1.15.4#eebd048fb05034959fd06e499fcdfaebbcce1d6c"
-+version = "1.16.2"
+ version = "1.16.2"
+-source = "git+https://github.com/an-anime-team/anime-launcher-sdk?tag=1.16.2#82f6584c9888debb8540568e30f9fb3b3175d689"
 +source = "git+https://github.com/zakuciael/anime-launcher-sdk?rev=133d6b7ffd005a8f63950626bb01ba77bf8270df#133d6b7ffd005a8f63950626bb01ba77bf8270df"
  dependencies = [
   "anime-game-core",
   "anyhow",
-- "cached",
-+ "cached 0.52.0",
-  "discord-rich-presence",
-  "enum-ordinalize",
-  "lazy_static",
-@@ -493,7 +493,22 @@
- checksum = "0feb64151eed3da6107fddd2d717a6ca4b9dbd74e43784c55c841d1abfe5a295"
- dependencies = [
-  "ahash",
-- "cached_proc_macro",
-+ "cached_proc_macro 0.21.0",
-+ "cached_proc_macro_types",
-+ "hashbrown",
-+ "instant",
-+ "once_cell",
-+ "thiserror",
-+]
-+
-+[[package]]
-+name = "cached"
-+version = "0.52.0"
-+source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "a8466736fe5dbcaf8b8ee24f9bbefe43c884dc3e9ff7178da70f55bffca1133c"
-+dependencies = [
-+ "ahash",
-+ "cached_proc_macro 0.22.0",
-  "cached_proc_macro_types",
-  "hashbrown",
-  "instant",
-@@ -514,6 +529,18 @@
- ]
- 
- [[package]]
-+name = "cached_proc_macro"
-+version = "0.22.0"
-+source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "575f32e012222055211b70f5b0601f951f84523410a0e65c81f2744a6042450d"
-+dependencies = [
-+ "darling",
-+ "proc-macro2",
-+ "quote",
-+ "syn",
-+]
-+
-+[[package]]
- name = "cached_proc_macro_types"
- version = "0.1.1"
- source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1926,9 +1953,9 @@
- 
- [[package]]
- name = "open"
--version = "5.1.4"
-+version = "5.2.0"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "b5ca541f22b1c46d4bb9801014f234758ab4297e7870b904b6a8415b980a7388"
-+checksum = "9d2c909a3fce3bd80efef4cd1c6c056bd9376a8fe06fcfdbebaf32cb485a7e37"
- dependencies = [
-  "is-wsl",
-  "libc",
-@@ -2690,9 +2717,9 @@
+@@ -2690,9 +2690,9 @@
  
  [[package]]
  name = "tinyvec"
@@ -109,7 +33,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "tinyvec_macros",
  ]
-@@ -3132,7 +3159,7 @@
+@@ -3132,7 +3132,7 @@
  checksum = "e48a53791691ab099e5e2ad123536d0fff50652600abaf43bbf952894110d0be"
  dependencies = [
   "windows-core",
@@ -118,7 +42,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  ]
  
  [[package]]
-@@ -3141,7 +3168,7 @@
+@@ -3141,7 +3141,7 @@
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "33ab640c8d7e35bf8ba19b884ba838ceb4fba93a4e8c65a9059d08afcfc683d9"
  dependencies = [
@@ -127,7 +51,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  ]
  
  [[package]]
-@@ -3159,7 +3186,7 @@
+@@ -3159,7 +3159,7 @@
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "282be5f36a8ce781fad8c8ae18fa3f9beff57ec1b52cb3de0789201425d9a33d"
  dependencies = [
@@ -136,7 +60,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  ]
  
  [[package]]
-@@ -3179,18 +3206,18 @@
+@@ -3179,18 +3179,18 @@
  
  [[package]]
  name = "windows-targets"
@@ -164,7 +88,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  ]
  
  [[package]]
-@@ -3201,9 +3228,9 @@
+@@ -3201,9 +3201,9 @@
  
  [[package]]
  name = "windows_aarch64_gnullvm"
@@ -176,7 +100,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_aarch64_msvc"
-@@ -3213,9 +3240,9 @@
+@@ -3213,9 +3213,9 @@
  
  [[package]]
  name = "windows_aarch64_msvc"
@@ -188,7 +112,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_i686_gnu"
-@@ -3225,15 +3252,15 @@
+@@ -3225,15 +3225,15 @@
  
  [[package]]
  name = "windows_i686_gnu"
@@ -208,7 +132,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_i686_msvc"
-@@ -3243,9 +3270,9 @@
+@@ -3243,9 +3243,9 @@
  
  [[package]]
  name = "windows_i686_msvc"
@@ -220,7 +144,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_x86_64_gnu"
-@@ -3255,9 +3282,9 @@
+@@ -3255,9 +3255,9 @@
  
  [[package]]
  name = "windows_x86_64_gnu"
@@ -232,7 +156,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_x86_64_gnullvm"
-@@ -3267,9 +3294,9 @@
+@@ -3267,9 +3267,9 @@
  
  [[package]]
  name = "windows_x86_64_gnullvm"
@@ -244,7 +168,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "windows_x86_64_msvc"
-@@ -3279,9 +3306,9 @@
+@@ -3279,9 +3279,9 @@
  
  [[package]]
  name = "windows_x86_64_msvc"
@@ -256,7 +180,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  
  [[package]]
  name = "winnow"
-@@ -3399,18 +3426,18 @@
+@@ -3399,18 +3399,18 @@
  
  [[package]]
  name = "zerocopy"
@@ -279,17 +203,17 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.lock /tmp/aagl-nix-p
  dependencies = [
   "proc-macro2",
   "quote",
-diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.toml /tmp/aagl-nix-patcher-kAMouRaAZn/modified/Cargo.toml
---- /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.toml	2024-07-06 00:09:34.861928102 +0200
-+++ /tmp/aagl-nix-patcher-kAMouRaAZn/modified/Cargo.toml	2024-07-06 00:09:39.353770602 +0200
+diff -Naur /tmp/aagl-nix-patcher-VqYYgYcpdV/org_files/Cargo.toml /tmp/aagl-nix-patcher-VqYYgYcpdV/modified/Cargo.toml
+--- /tmp/aagl-nix-patcher-VqYYgYcpdV/org_files/Cargo.toml	2024-07-06 00:09:35.073920669 +0200
++++ /tmp/aagl-nix-patcher-VqYYgYcpdV/modified/Cargo.toml	2024-07-06 00:09:42.013677337 +0200
 @@ -1,49 +1,63 @@
 -[package]
--name = "anime-game-launcher"
--version = "3.10.1"
--description = "Anime Game launcher"
+-name = "sleepy-launcher"
+-version = "1.0.0"
+-description = "Sleepy launcher"
 -authors = ["Nikita Podvirnyy <krypt0nn@vk.com>"]
--homepage = "https://github.com/an-anime-team/an-anime-game-launcher"
--repository = "https://github.com/an-anime-team/an-anime-game-launcher"
+-homepage = "https://github.com/an-anime-team/sleepy-launcher"
+-repository = "https://github.com/an-anime-team/sleepy-launcher"
 -license = "GPL-3.0"
 -edition = "2021"
 -build = "build.rs"
@@ -304,8 +228,8 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.toml /tmp/aagl-nix-p
 -
 -[dependencies.anime-launcher-sdk]
 -git = "https://github.com/an-anime-team/anime-launcher-sdk"
--tag = "1.15.4"
--features = ["all", "genshin"]
+-tag = "1.16.2"
+-features = ["all", "zzz"]
 -
 -# path = "../anime-launcher-sdk" # ! for dev purposes only
 +  glib-build-tools = '0.19'
@@ -316,21 +240,21 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.toml /tmp/aagl-nix-p
 -adw = { package = "libadwaita", version = "0.6.0", features = ["v1_4"] }
 -
 -rfd = { version = "0.14.1", features = ["xdg-portal", "tokio"], default-features = false }
--open = "5.0.0"
+-open = "5.2.0"
 -whatadistro = "0.1.0"
 -
 -serde_json = "1.0"
 -anyhow = "1.0"
--lazy_static = "1.4.0"
--cached = { version = "0.51", features = ["proc_macro"] }
+-lazy_static = "1.5.0"
+-cached = { version = "0.52", features = ["proc_macro"] }
 -md-5 = { version = "0.10", features = ["asm"] }
 -enum-ordinalize = "4.3"
 +  anyhow = '1.0'
 +  enum-ordinalize = '4.3'
 +  fluent-templates = '0.9'
 +  human-panic = '2.0.0'
-+  lazy_static = '1.4.0'
-+  open = '5.0.0'
++  lazy_static = '1.5.0'
++  open = '5.2.0'
 +  serde_json = '1.0'
 +  tracing = '0.1'
 +  tracing-subscriber = '0.3'
@@ -348,7 +272,7 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.toml /tmp/aagl-nix-p
 +
 +  [dependencies.cached]
 +    features = ['proc_macro']
-+    version = '0.51'
++    version = '0.52'
 +
 +  [dependencies.gtk]
 +    features = ['v4_12']
@@ -378,13 +302,13 @@ diff -Naur /tmp/aagl-nix-patcher-kAMouRaAZn/org_files/Cargo.toml /tmp/aagl-nix-p
 +[package]
 +  authors = ['Nikita Podvirnyy <krypt0nn@vk.com>']
 +  build = 'build.rs'
-+  description = 'Anime Game launcher'
++  description = 'Sleepy launcher'
 +  edition = '2021'
-+  homepage = 'https://github.com/an-anime-team/an-anime-game-launcher'
++  homepage = 'https://github.com/an-anime-team/sleepy-launcher'
 +  license = 'GPL-3.0'
-+  name = 'anime-game-launcher'
-+  repository = 'https://github.com/an-anime-team/an-anime-game-launcher'
-+  version = '3.10.1'
++  name = 'sleepy-launcher'
++  repository = 'https://github.com/an-anime-team/sleepy-launcher'
++  version = '1.0.0'
 +
 +[profile]
 +  [profile.release]
