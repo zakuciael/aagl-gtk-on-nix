@@ -12,47 +12,69 @@ rec {
     };
   };
 
-  outputs = { nixpkgs, ... }: let
+  outputs = {nixpkgs, ...}: let
     genSystems = nixpkgs.lib.genAttrs [
       # Supported OSes
       "x86_64-linux"
     ];
 
-    nixpkgs-nonfree = system: import nixpkgs {
-      inherit system;
-      config = { allowUnfree = true; };
-    };
-
-    packages = pkgs: with pkgs; let
-      alias = import ./pkgs/alias.nix launchers;
-      launchers = let
-        mkLauncher = launcher: {
-          "${launcher}" = callPackage ./pkgs/${launcher} {
-            wrapAAGL = callPackage ./pkgs/wrapAAGL;
-            unwrapped = callPackage ./pkgs/${launcher}/unwrapped.nix { };
-          };
-        };
-      in builtins.foldl' (a: b: a // b) {} (map mkLauncher [
-        "anime-borb-launcher"
-        "anime-game-launcher"
-        "anime-games-launcher"
-        "honkers-launcher"
-        "honkers-railway-launcher"
-        "sleepy-launcher"
-        "wavey-launcher"
-      ]);
-    in launchers // alias // {
-      allLaunchers = symlinkJoin {
-        name = "allLaunchers";
-        paths = builtins.attrValues launchers;
+    nixpkgs-nonfree = system:
+      import nixpkgs {
+        inherit system;
+        config = {allowUnfree = true;};
       };
-      # return this package set with a given nixpkgs instance
-      withNixpkgs = p: packages p;
-    };
+
+    packages = pkgs:
+      with pkgs; let
+        alias = import ./pkgs/alias.nix launchers;
+        launchers = let
+          mkLauncher = launcher: {
+            "${launcher}" = callPackage ./pkgs/${launcher} {
+              wrapAAGL = callPackage ./pkgs/wrapAAGL;
+              unwrapped = callPackage ./pkgs/${launcher}/unwrapped.nix {};
+            };
+          };
+        in
+          builtins.foldl' (a: b: a // b) {} (map mkLauncher [
+            "anime-borb-launcher"
+            "anime-game-launcher"
+            "anime-games-launcher"
+            "honkers-launcher"
+            "honkers-railway-launcher"
+            "sleepy-launcher"
+            "wavey-launcher"
+          ]);
+      in
+        launchers
+        // alias
+        // {
+          allLaunchers = symlinkJoin {
+            name = "allLaunchers";
+            paths = builtins.attrValues launchers;
+          };
+          # return this package set with a given nixpkgs instance
+          withNixpkgs = p: packages p;
+        };
   in {
     inherit nixConfig;
     nixosModules.default = import ./module (packages (nixpkgs-nonfree "x86_64-linux"));
     packages = genSystems (system: let pkgs = nixpkgs-nonfree system; in packages pkgs);
     overlays.default = _: prev: builtins.removeAttrs (packages prev) ["unwrapped" "regular"];
+    devShells = genSystems (system: let
+      pkgs = nixpkgs-nonfree system;
+    in {
+      default = pkgs.mkShell {
+        name = "aagl-nix";
+        nativeBuildInputs = with pkgs; [
+          semver-tool
+          url-parser
+          nix-prefetch-git
+          python3
+          just
+          dasel
+          cargo
+        ];
+      };
+    });
   };
 }
