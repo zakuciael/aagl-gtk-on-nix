@@ -57,8 +57,8 @@ checksum = "5c6cb57a04249c6480766f7f7cef5467412af1490f8d1e243141daddada3264f"
 
 [[package]]
 name = "anime-game-core"
-version = "1.20.2"
-source = "git+https://github.com/an-anime-team/anime-game-core?tag=1.20.2#3f013bffed78ca9c22db1d8bb10d4ae8ef527c5c"
+version = "1.21.0"
+source = "git+https://github.com/an-anime-team/anime-game-core?tag=1.21.1#f141176fe5d940c89eee376354a07408c18fbcab"
 dependencies = [
  "anyhow",
  "bzip2",
@@ -82,8 +82,8 @@ dependencies = [
 
 [[package]]
 name = "anime-launcher-sdk"
-version = "1.15.4"
-source = "git+https://github.com/an-anime-team/anime-launcher-sdk?tag=1.15.4#eebd048fb05034959fd06e499fcdfaebbcce1d6c"
+version = "1.16.2"
+source = "git+https://github.com/an-anime-team/anime-launcher-sdk?tag=1.16.2#82f6584c9888debb8540568e30f9fb3b3175d689"
 dependencies = [
  "anime-game-core",
  "anyhow",
@@ -463,9 +463,9 @@ dependencies = [
 
 [[package]]
 name = "cached"
-version = "0.51.4"
+version = "0.52.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0feb64151eed3da6107fddd2d717a6ca4b9dbd74e43784c55c841d1abfe5a295"
+checksum = "a8466736fe5dbcaf8b8ee24f9bbefe43c884dc3e9ff7178da70f55bffca1133c"
 dependencies = [
  "ahash",
  "cached_proc_macro",
@@ -478,9 +478,9 @@ dependencies = [
 
 [[package]]
 name = "cached_proc_macro"
-version = "0.21.0"
+version = "0.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "771aa57f3b17da6c8bcacb187bb9ec9bc81c8160e72342e67c329e0e1651a669"
+checksum = "575f32e012222055211b70f5b0601f951f84523410a0e65c81f2744a6042450d"
 dependencies = [
  "darling",
  "proc-macro2",
@@ -1472,31 +1472,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6c49c37c09c17a53d937dfbb742eb3a961d65a994e6bcdcf37e7399d0cc8ab5e"
 dependencies = [
  "digest",
-]
-
-[[package]]
-name = "honkers-railway-launcher"
-version = "1.6.1"
-dependencies = [
- "anime-launcher-sdk",
- "anyhow",
- "cached",
- "enum-ordinalize",
- "fluent-templates",
- "glib-build-tools",
- "gtk4",
- "human-panic",
- "lazy_static",
- "libadwaita",
- "md-5",
- "open",
- "relm4",
- "rfd",
- "serde_json",
- "tracing",
- "tracing-subscriber",
- "unic-langid",
- "whatadistro",
 ]
 
 [[package]]
@@ -2517,6 +2492,31 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f92a496fb766b417c996b9c5e57daf2f7ad3b0bebe1ccfca4856390e3d3bb67"
 dependencies = [
  "autocfg",
+]
+
+[[package]]
+name = "sleepy-launcher"
+version = "1.0.0"
+dependencies = [
+ "anime-launcher-sdk",
+ "anyhow",
+ "cached",
+ "enum-ordinalize",
+ "fluent-templates",
+ "glib-build-tools",
+ "gtk4",
+ "human-panic",
+ "lazy_static",
+ "libadwaita",
+ "md-5",
+ "open",
+ "relm4",
+ "rfd",
+ "serde_json",
+ "tracing",
+ "tracing-subscriber",
+ "unic-langid",
+ "whatadistro",
 ]
 
 [[package]]
